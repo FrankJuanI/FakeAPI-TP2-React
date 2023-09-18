@@ -1,0 +1,10 @@
+.buttons {
+  width: 100%;
+}
+
+.buttons button {
+  width: 50%;
+  border: none;
+  background: #999;
+  height: 50px;
+}
