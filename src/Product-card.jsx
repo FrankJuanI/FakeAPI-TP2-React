@@ -17,7 +17,9 @@ function Card({ image, title, description, price }) {
         flexDirection: "column",
         justifyContent: "space-between",
         alignItems: "center",
+        cursor: "pointer",
       }}
+      onClick={() => alert("Hola")}
     >
       <img style={{ width: "100%", margin: "0 auto" }} src={image} alt="" />
       <h3>{title}</h3>
