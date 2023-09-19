@@ -1,3 +1,5 @@
+import "./NavItem.css";
+
 function NavItem({ image, title }) {
   return (
     <li

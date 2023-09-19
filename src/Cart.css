@@ -1,0 +1,53 @@
+.card-cart {
+  background-color: #a9a9a9;
+  min-height: 300px;
+  width: 500px;
+  box-sizing: border-box;
+  padding: 20px;
+  position: relative;
+}
+
+.card-cart-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card-cart-header h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.card-cart-header p {
+  margin: 0;
+  padding: 0;
+}
+
+.cart-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 160px;
+  justify-content: space-between;
+  right: 0;
+  bottom: 0;
+  position: relative;
+}
+
+.subtotal-y-cantdeproductos {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtotal-y-cantdeproductos h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.subtotal-y-cantdeproductos p {
+  margin: 0;
+}
+
+.total {
+  display: flex;
+}

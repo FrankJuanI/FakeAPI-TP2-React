@@ -1,0 +1,12 @@
+.nav-item {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+}
+
+.nav-item:hover {
+  background-color: blue;
+}
