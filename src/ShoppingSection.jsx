@@ -1,25 +1,28 @@
-import { useState } from "react";
-import { Card } from "./ProductCard.jsx";
+import { useState, useEffect } from "react";
 import { FiltrosAside } from "./ShoppingFiltrosAside.jsx";
 import { ChangeView } from "./ChangeView.jsx";
-
-const GetInfo = async () => {
-  try {
-    const response = await fetch("https://fakestoreapi.com/products");
-    if (response.ok) {
-      const data = await response.json();
-      console.log(data);
-      return data;
-    }
-  } catch {
-    console.log(error);
-  }
-};
-
-const PRODUCTS = await GetInfo();
+import { CardsView } from "./CardsView.jsx";
+// import { ListView } from "./ListView.jsx";
 
 function ShoppingSection() {
+  const [info, setInfo] = useState();
   const [view, setView] = useState("card");
+
+  useEffect(() => {
+    const getInfo = async () => {
+      try {
+        const response = await fetch("https://fakestoreapi.com/products");
+        if (response.ok) {
+          const data = await response.json();
+          setInfo(data);
+        }
+      } catch {
+        console.log(error);
+      }
+    };
+    getInfo();
+  }, []);
+
   return (
     <>
       <ChangeView view={view} setView={setView} />
@@ -28,29 +31,7 @@ function ShoppingSection() {
         style={{ flexDirection: "row", position: "relative", display: "flex" }}
       >
         <FiltrosAside />
-        <div
-          className="catalogo"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            width: "85%",
-            justifyContent: "space-evenly",
-          }}
-        >
-          {PRODUCTS.map((product, index) => {
-            return (
-              <Card
-                key={`${index}`}
-                image={product.image}
-                title={product.title}
-                description={product.description}
-                price={product.price}
-                initView={view}
-              />
-            );
-          })}
-        </div>
+        <CardsView product={info} />
       </div>
     </>
   );
