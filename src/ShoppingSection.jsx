@@ -29,6 +29,10 @@ function ShoppingSection() {
     <>
       <ChangeView view={view} setView={setView} />
       <div
+        className="separator"
+        style={{ height: "40px", width: "100vw" }}
+      ></div>
+      <div
         className="shopping-section"
         style={{ flexDirection: "row", position: "relative", display: "flex" }}
       >
