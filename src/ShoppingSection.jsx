@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { FiltrosAside } from "./ShoppingFiltrosAside.jsx";
 import { ChangeView } from "./ChangeView.jsx";
 import { CardsView } from "./CardsView.jsx";
-// import { ListView } from "./ListView.jsx";
+import { TableView } from "./TableView.jsx";
 
 function ShoppingSection() {
   const [info, setInfo] = useState();
@@ -23,6 +23,8 @@ function ShoppingSection() {
     getInfo();
   }, []);
 
+  console.log(info);
+
   return (
     <>
       <ChangeView view={view} setView={setView} />
@@ -31,7 +33,11 @@ function ShoppingSection() {
         style={{ flexDirection: "row", position: "relative", display: "flex" }}
       >
         <FiltrosAside />
-        <CardsView product={info} />
+        {view === "card" ? (
+          <CardsView product={info} />
+        ) : (
+          <TableView product={info} />
+        )}
       </div>
     </>
   );
