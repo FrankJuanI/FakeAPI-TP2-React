@@ -1,11 +1,12 @@
 .row-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr 1fr;
   border: 1px solid #eee;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 1em;
   justify-content: space-between;
+  gap: 1em;
 }
 
 .img-row {
@@ -13,15 +14,9 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  margin: 0px 10px 0px 10px;
-}
-
-.title-row {
-  width: 25%;
 }
 
 .description-row {
-  width: calc(40% - 20px);
   margin: 0px 10px 0px 10px;
 }
 
