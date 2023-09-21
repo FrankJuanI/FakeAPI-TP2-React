@@ -1,0 +1,32 @@
+.card {
+  width: 250px;
+  height: auto;
+  min-height: 500px;
+  background-color: #eee;
+  position: relative;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.img-card {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.buttons-card {
+  width: 100%;
+}
+
+.buttons-card button {
+  width: 50%;
+  border: none;
+  background: #999;
+  height: 50px;
+  border-radius: 10px;
+}

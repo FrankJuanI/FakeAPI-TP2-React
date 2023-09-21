@@ -4,26 +4,14 @@ import { ChangeView } from "./ChangeView.jsx";
 import { CardsView } from "./CardsView.jsx";
 import { TableView } from "./TableView.jsx";
 
-function ShoppingSection() {
-  const [info, setInfo] = useState();
+function ShoppingSection({ info }) {
   const [view, setView] = useState("card");
 
   useEffect(() => {
-    const getInfo = async () => {
-      try {
-        const response = await fetch("https://fakestoreapi.com/products");
-        if (response.ok) {
-          const data = await response.json();
-          setInfo(data);
-        }
-      } catch {
-        console.log(error);
-      }
-    };
-    getInfo();
-  }, []);
-
-  console.log(info);
+    if (info ?? undefined) {
+      return;
+    }
+  }, [info]);
 
   return (
     <>
@@ -37,10 +25,11 @@ function ShoppingSection() {
         style={{ flexDirection: "row", position: "relative", display: "flex" }}
       >
         <FiltrosAside />
+
         {view === "card" ? (
-          <CardsView product={INFO_FILTRADA} />
+          <CardsView info={info} />
         ) : (
-          <TableView product={info} />
+          <TableView info={info} />
         )}
       </div>
     </>

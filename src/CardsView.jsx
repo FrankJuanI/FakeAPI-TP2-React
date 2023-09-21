@@ -1,6 +1,6 @@
 import { Card } from "./ProductCard";
 
-function CardsView({ product }) {
+function CardsView({ info }) {
   return (
     <div
       className="catalogo"
@@ -12,8 +12,8 @@ function CardsView({ product }) {
         justifyContent: "space-evenly",
       }}
     >
-      {product &&
-        product.map((product, index) => {
+      {info &&
+        info.map((product, index) => {
           return (
             <Card
               key={`${index}`}

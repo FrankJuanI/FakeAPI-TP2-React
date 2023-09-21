@@ -1,6 +1,7 @@
 import { NavItem } from "./NavItem.jsx";
+import { SearchBar } from "./SearchBar.jsx";
 
-function NavBar() {
+function NavBar({ handleOnChange }) {
   return (
     <ul
       className="navBar"
@@ -8,7 +9,7 @@ function NavBar() {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-around",
-        width: "300px",
+        width: "500px",
         margin: "0 auto",
         backgroundColor: "#efefef",
         padding: "10px",
@@ -16,9 +17,11 @@ function NavBar() {
         justifyItems: "space-between",
         fontFamily: "Helvetica",
         fontSize: "12px",
+        gap: "1.2em",
       }}
     >
       <NavItem image={"./src/assets/home.png"} title={"Home"} />
+      <SearchBar handleOnChange={handleOnChange} />
       <NavItem image={"./src/assets/magnifying-glass.png"} title={"Search"} />
       <NavItem image={"./src/assets/shopping-cart.png"} title={"Cart"} />
       <NavItem image={"./src/assets/user.png"} title={"User"} />
