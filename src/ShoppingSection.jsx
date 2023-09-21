@@ -38,7 +38,7 @@ function ShoppingSection() {
       >
         <FiltrosAside />
         {view === "card" ? (
-          <CardsView product={info} />
+          <CardsView product={INFO_FILTRADA} />
         ) : (
           <TableView product={info} />
         )}
