@@ -1,7 +1,7 @@
 import { NavItem } from "./NavItem.jsx";
 import { SearchBar } from "./SearchBar.jsx";
 
-function NavBar({ handleOnChange }) {
+function NavBar() {
   return (
     <ul
       className="navBar"
@@ -21,8 +21,6 @@ function NavBar({ handleOnChange }) {
       }}
     >
       <NavItem image={"./src/assets/home.png"} title={"Home"} />
-      <SearchBar handleOnChange={handleOnChange} />
-      <NavItem image={"./src/assets/magnifying-glass.png"} title={"Search"} />
       <NavItem image={"./src/assets/shopping-cart.png"} title={"Cart"} />
       <NavItem image={"./src/assets/user.png"} title={"User"} />
     </ul>

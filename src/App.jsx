@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [info, setInfo] = useState();
-  const [search, setSearch] = useState("mens");
 
   const getInfo = async () => {
     try {
@@ -14,54 +13,40 @@ function App() {
       if (response.ok) {
         const data = await response.json();
         console.log("Full data: ", data);
-        return data;
+        setInfo(data);
+        console.log(info);
       }
     } catch {
       console.log(error);
     }
   };
 
-  const handleOnChange = (value) => {
-    setSearch(value);
-    console.log("OnChange: ", value);
-  };
-
-  const filterBy = async () => {
-    const data = await getInfo();
-    setInfo(
-      data.filter((item) => {
-        if (search === "") {
-          return item;
-        } else if (item.title.toLowerCase().includes(search.toLowerCase())) {
-          return item;
-        }
-      })
-    );
-    console.log(
-      "filter: ",
-      data.filter((item) => {
-        if (search === "") {
-          return item;
-        } else if (item.title.toLowerCase().includes(search.toLowerCase())) {
-          return item;
-        }
-      })
-    );
-  };
+  // const filterBy = async () => {
+  //   const data = await getInfo();
+  //   setInfo(
+  //     data.filter((item) => {
+  //       if (search === "") {
+  //         return item;
+  //       } else if (item.title.toLowerCase().includes(search.toLowerCase())) {
+  //         return item;
+  //       }
+  //     })
+  //   );
+  // };
 
   useEffect(() => {
-    setInfo(filterBy());
-  }, [search]);
+    getInfo();
+  }, []);
 
   return (
     <>
       <Cart state={"hidden"} />
-      <NavBar handleOnChange={handleOnChange} />
+      <NavBar />
       <div
         className="separator"
         style={{ height: "40px", width: "100vw" }}
       ></div>
-      {info === !undefined ?? <ShoppingSection info={info} />}
+      <ShoppingSection info={info} />
     </>
   );
 }

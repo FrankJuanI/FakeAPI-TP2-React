@@ -3,15 +3,19 @@ import { FiltrosAside } from "./ShoppingFiltrosAside.jsx";
 import { ChangeView } from "./ChangeView.jsx";
 import { CardsView } from "./CardsView.jsx";
 import { TableView } from "./TableView.jsx";
+import { SearchBar } from "./SearchBar.jsx";
+import { Await } from "./Await.jsx";
 
 function ShoppingSection({ info }) {
+  const [search, setSearch] = useState("");
   const [view, setView] = useState("card");
+  if (info === undefined) {
+    console.log("info undefined");
+  }
 
-  useEffect(() => {
-    if (info ?? undefined) {
-      return;
-    }
-  }, [info]);
+  const handleOnChange = (value) => {
+    setSearch(value);
+  };
 
   return (
     <>
@@ -24,13 +28,15 @@ function ShoppingSection({ info }) {
         className="shopping-section"
         style={{ flexDirection: "row", position: "relative", display: "flex" }}
       >
-        <FiltrosAside />
+        <SearchBar handleOnChange={handleOnChange} />
 
-        {view === "card" ? (
+        {view === "card" && info === null ? (
+          <Await />
+        ) : view === "card" && info ? (
           <CardsView info={info} />
-        ) : (
+        ) : info ? (
           <TableView info={info} />
-        )}
+        ) : null}
       </div>
     </>
   );
