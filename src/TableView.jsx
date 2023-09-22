@@ -1,6 +1,6 @@
 import { Row } from "./Row";
 
-function TableView({ product }) {
+function TableView({ info }) {
   return (
     <div
       className="catalogo"
@@ -11,8 +11,8 @@ function TableView({ product }) {
         justifyContent: "space-evenly",
       }}
     >
-      {product &&
-        product.map((product, index) => {
+      {info &&
+        info.map((product, index) => {
           return (
             <Row
               key={`${index}`}

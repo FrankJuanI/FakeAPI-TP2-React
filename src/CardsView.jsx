@@ -1,6 +1,11 @@
 import { Card } from "./ProductCard";
+import { useState, useEffect } from "react";
 
-function CardsView({ product }) {
+function CardsView({ info }) {
+  const [infoo, setInfoo] = useState();
+  useEffect(() => {
+    setInfoo(info);
+  }, [info]);
   return (
     <div
       className="catalogo"
@@ -12,8 +17,8 @@ function CardsView({ product }) {
         justifyContent: "space-evenly",
       }}
     >
-      {product &&
-        product.map((product, index) => {
+      {infoo &&
+        infoo.map((product, index) => {
           return (
             <Card
               key={`${index}`}
