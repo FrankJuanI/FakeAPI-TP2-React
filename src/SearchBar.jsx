@@ -19,7 +19,6 @@ function SearchBar({ setSearch }) {
         }}
       />
     </div>
-
   );
 }
 

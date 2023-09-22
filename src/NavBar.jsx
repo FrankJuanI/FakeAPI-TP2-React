@@ -1,5 +1,4 @@
 import { NavItem } from "./NavItem.jsx";
-import { SearchBar } from "./SearchBar.jsx";
 
 function NavBar() {
   return (
