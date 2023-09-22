@@ -11,7 +11,6 @@ function ShoppingSection({ info }) {
   const [refresh, setRefresh] = useState(false);
   const [filter, setFilter] = useState(info);
 
-  useEffect(() => {}, []);
 
   useEffect(() => {
     const filterBy = (search) => {
@@ -58,6 +57,7 @@ function ShoppingSection({ info }) {
         ) : info ? (
           <TableView info={filter ?? info} />
         ) : null}
+
       </div>
     </>
   );

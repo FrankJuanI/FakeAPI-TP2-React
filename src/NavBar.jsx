@@ -10,11 +10,11 @@ function NavBar() {
         flexDirection: "row",
         justifyContent: "space-around",
         width: "500px",
+
         margin: "0 auto",
         backgroundColor: "#efefef",
         padding: "10px",
         borderRadius: "10px",
-        justifyItems: "space-between",
         fontFamily: "Helvetica",
         fontSize: "12px",
         gap: "1.2em",

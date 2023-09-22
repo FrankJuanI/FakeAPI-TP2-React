@@ -24,15 +24,17 @@ function App() {
     getInfo();
   }, []);
 
+
   return (
     <>
       <Cart state={"hidden"} />
-      <NavBar />
+      <NavBar setSearch={setSearch} />
       <div
         className="separator"
         style={{ height: "40px", width: "100vw" }}
       ></div>
       <ShoppingSection info={info} />
+
     </>
   );
 }
