@@ -1,4 +1,4 @@
-function SearchBar({ handleOnChange }) {
+function SearchBar({ setSearch }) {
   return (
     <div
       style={{
@@ -14,7 +14,8 @@ function SearchBar({ handleOnChange }) {
         type="text"
         placeholder="Search..."
         onChange={(event) => {
-          handleOnChange(event.target.value);
+          setSearch(event.target.value);
+          console.log(event.target.value);
         }}
       />
     </div>

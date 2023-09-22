@@ -14,25 +14,11 @@ function App() {
         const data = await response.json();
         console.log("Full data: ", data);
         setInfo(data);
-        console.log(info);
       }
     } catch {
       console.log(error);
     }
   };
-
-  // const filterBy = async () => {
-  //   const data = await getInfo();
-  //   setInfo(
-  //     data.filter((item) => {
-  //       if (search === "") {
-  //         return item;
-  //       } else if (item.title.toLowerCase().includes(search.toLowerCase())) {
-  //         return item;
-  //       }
-  //     })
-  //   );
-  // };
 
   useEffect(() => {
     getInfo();
